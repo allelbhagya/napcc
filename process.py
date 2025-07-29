@@ -16,7 +16,7 @@ def load_pdf(path, chunk_size=500, overlap=50):
 
     return chunks
 
-def embed_chunks(chunks, model_name="all-MiniLM-L6-v2"):
+def embed_chunks(chunks, model_name = "intfloat/e5-small-v2"):
     model = SentenceTransformer(model_name)
     embeddings = model.encode(chunks, convert_to_numpy=True)
     return embeddings, model
